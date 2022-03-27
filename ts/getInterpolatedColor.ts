@@ -11,7 +11,7 @@ function fitValue(sideA: number, sideB: number) {
   return function transformValue(value: number) {
     const distance = sideA - sideB;
 
-    return Math.abs(distance) * value + Math.sign(distance) * sideA;
+    return Math.abs(distance) * value * Math.sign(distance) + sideB;
   };
 }
 
