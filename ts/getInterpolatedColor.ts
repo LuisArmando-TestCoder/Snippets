@@ -9,9 +9,9 @@ function cornerValue(bottom: number, top: number) {
 
 function fitValue(sideA: number, sideB: number) {
   return function transformValue(value: number) {
-    const distance = sideA - sideB;
+    const distance = sideB - sideA;
 
-    return Math.abs(distance) * value * Math.sign(distance) + sideB;
+    return Math.abs(distance) * value * Math.sign(distance) + sideA;
   };
 }
 
