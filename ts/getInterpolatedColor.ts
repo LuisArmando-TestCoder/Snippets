@@ -2,13 +2,13 @@
  * @param bottom: less than top
  */
 function cornerValue(bottom: number, top: number) {
-  return function transformValue(value) {
+  return function transformValue(value: number) {
     return Math.max(Math.min(value, top), bottom);
   };
 }
 
 function fitValue(sideA: number, sideB: number) {
-  return function transformValue(value) {
+  return function transformValue(value: number) {
     return (
       value * (Math.max(sideA, sideB) - Math.min(sideA, sideB)) +
       Math.min(sideA, sideB)
