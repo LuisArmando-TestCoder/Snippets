@@ -9,10 +9,9 @@ function cornerValue(bottom: number, top: number) {
 
 function fitValue(sideA: number, sideB: number) {
   return function transformValue(value: number) {
-    return (
-      value * (Math.max(sideA, sideB) - Math.min(sideA, sideB)) +
-      Math.min(sideA, sideB)
-    );
+    const distance = sideA - sideB;
+
+    return Math.abs(distance) * value + Math.sign(distance) * sideA;
   };
 }
 
@@ -42,8 +41,10 @@ function getInterpolatedColor(
 
 /*
 getInterpolatedColor(
-    .5,
-    [100, 200, 55, 1],
-    [200, 255, 20, .3]
+  .5,
+  [100, 200, 55, 1],
+  [200, 255, 20, .3]
 )
 */
+
+export default getInterpolatedColor;
