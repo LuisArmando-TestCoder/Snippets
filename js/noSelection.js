@@ -1,5 +1,3 @@
-// http://etimologias.dechile.net/
-
 document.onkeypress = function (event) {
     event = (event || window.event);
     if (event.keyCode == 123) {
